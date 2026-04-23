@@ -1,42 +1,47 @@
 ---
 const experiences = [
   {
-    role: "Senior Security Engineer",
-    company: "Enterprise Corp",
+    role: "Cyber Security Specialist & Lead of IT Support",
+    company: "Worth AI",
+    type: "Security + Operations",
+    period: "2024 – Current",
+    description: "Lead cybersecurity and IT support operations with focus on SOC2 readiness, endpoint security, and practical risk reduction.",
+    impact: "Improved compliance posture by 25%, reduced provisioning time by 80%, and cut downtime by 25%.",
+    highlights: [
+      "Investigated and resolved 120+ security incidents with a 100% resolution rate",
+      "Conducted vulnerability scans and penetration tests and mitigated 15+ critical issues",
+      "Configured and secured 70+ macOS endpoints with zero asset loss over 12 months",
+      "Managed 20+ technical projects across system deployments, endpoint protection, and remediation",
+      "Provided SME support for Office 365, Google Workspace, AWS, Jira, Datadog, and Slack",
+    ],
+  },
+  {
+    role: "Senior Enterprise Help Desk Technician Tier 2",
+    company: "Apex Systems (Contract for Boeing)",
     type: "Enterprise",
-    period: "2022 – Present",
-    description: "Led red team operations and penetration testing engagements across a Fortune 500 environment. Architected security monitoring infrastructure and developed custom tooling for automated vulnerability discovery.",
+    period: "2021 – 2024",
+    description: "Delivered enterprise support and escalation handling for endpoint, identity, and engineering systems in a high-volume environment.",
+    impact: "Resolved 200+ high-priority tickets weekly and improved vulnerability remediation turnaround by 40%.",
     highlights: [
-      "Conducted 20+ red team engagements with zero detection events",
-      "Built internal SIEM dashboards reducing MTTD by 40%",
-      "Developed API security testing framework adopted org-wide",
-      "Cloud security architecture reviews (AWS / GCP)",
+      "Resolved 200+ high-priority support tickets weekly with consistent 100% resolution accuracy",
+      "Delivered advanced support for Microsoft Office, Active Directory, and enterprise engineering apps",
+      "Implemented PowerShell automation to reduce account provisioning time and misconfigurations",
+      "Configured and managed 300+ accounts per month across Webex, Palo Alto, and mobile integrations",
+      "Collaborated with server teams to accelerate patching and security remediation",
     ],
   },
   {
-    role: "Security & DevOps Engineer",
-    company: "Startup Scale",
-    type: "Startup",
-    period: "2020 – 2022",
-    description: "Wore many hats in a fast-moving startup environment — from setting up CI/CD pipelines and server infrastructure to performing internal security audits and shipping full-stack features.",
+    role: "Customer Service Team Lead",
+    company: "Publix Super Markets",
+    type: "Leadership",
+    period: "Pre-2021",
+    description: "Led frontline operations and escalations with strong focus on system accuracy, queue flow, and team performance.",
+    impact: "Supervised 80+ associates and maintained 98%+ customer satisfaction across 250+ weekly transactions.",
     highlights: [
-      "Sole security engineer securing a SaaS product from Day 0",
-      "Set up full DevOps pipeline with integrated SAST/DAST",
-      "Identified and patched 15 critical vulnerabilities pre-launch",
-      "Managed VPS fleet and PostgreSQL cluster administration",
-    ],
-  },
-  {
-    role: "Bug Bounty Hunter",
-    company: "Independent",
-    type: "Freelance",
-    period: "2019 – Present",
-    description: "Active bug bounty researcher across multiple programs. Specializing in web application vulnerabilities, API security issues, and authentication bypasses.",
-    highlights: [
-      "Hall-of-fame entries across multiple major programs",
-      "Focus: SSRF, IDOR, auth bypass, and injection attacks",
-      "Published security research and writeups",
-      "OWASP Top 10 deep expertise",
+      "Improved cash handling and transaction accuracy through process enforcement",
+      "Managed queue flow and order systems including Western Union and MoneyGram",
+      "Handled high-volume escalations while maintaining service quality and speed",
+      "Coached associates on communication, execution, and operational consistency",
     ],
   },
 ];
@@ -66,6 +71,7 @@ const experiences = [
               </div>
             </div>
             <p class="timeline-desc">{exp.description}</p>
+            <p class="timeline-impact">{exp.impact}</p>
             <ul class="timeline-highlights">
               {exp.highlights.map(h => (
                 <li class="timeline-highlight">
@@ -84,19 +90,19 @@ const experiences = [
       <div class="certs-grid">
         <div class="cert-item">
           <span class="cert-dot"></span>
-          <span>B.S. Cybersecurity — Offensive Focus</span>
+          <span>B.A.S. in Cybersecurity, St. Petersburg College (2021-2025)</span>
         </div>
         <div class="cert-item">
           <span class="cert-dot"></span>
-          <span>Multiple Software Development Certifications</span>
+          <span>Certificate of Cybersecurity (CAE2Y - NSA/DHS)</span>
         </div>
         <div class="cert-item">
           <span class="cert-dot"></span>
-          <span>Cloud-Focused Security Training</span>
+          <span>CompTIA A+ and CompTIA Security+</span>
         </div>
         <div class="cert-item">
           <span class="cert-dot"></span>
-          <span>Red Team Operations Training</span>
+          <span>Active Civilian Level Security Clearance (2020-2024)</span>
         </div>
       </div>
     </div>
@@ -227,8 +233,17 @@ const experiences = [
   .timeline-desc {
     font-size: 0.9rem;
     color: var(--text-secondary);
-    margin-bottom: 1rem;
+    margin-bottom: 0.65rem;
     line-height: 1.7;
+  }
+
+  .timeline-impact {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--blue-bright);
+    letter-spacing: 0.04em;
+    margin-bottom: 1rem;
+    line-height: 1.6;
   }
 
   .timeline-highlights {

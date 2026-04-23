@@ -1,0 +1,38 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import Skills from '../components/Skills.astro';
+import Experience from '../components/Experience.astro';
+import Projects from '../components/Projects.astro';
+import Contact from '../components/Contact.astro';
+---
+
+<Layout title="Ibrahim Gul — Security Engineer & Developer">
+  <Nav />
+  <main>
+    <Hero />
+    <div class="section-divider"></div>
+    <Skills />
+    <div class="section-divider"></div>
+    <Experience />
+    <div class="section-divider"></div>
+    <Projects />
+    <div class="section-divider"></div>
+    <Contact />
+  </main>
+</Layout>
+
+<style>
+  main {
+    position: relative;
+    z-index: 2;
+  }
+
+  .section-divider {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+    border-top: 1px solid var(--border-dim);
+  }
+</style>

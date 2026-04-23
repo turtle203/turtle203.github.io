@@ -1,0 +1,290 @@
+---
+const experiences = [
+  {
+    role: "Senior Security Engineer",
+    company: "Enterprise Corp",
+    type: "Enterprise",
+    period: "2022 – Present",
+    description: "Led red team operations and penetration testing engagements across a Fortune 500 environment. Architected security monitoring infrastructure and developed custom tooling for automated vulnerability discovery.",
+    highlights: [
+      "Conducted 20+ red team engagements with zero detection events",
+      "Built internal SIEM dashboards reducing MTTD by 40%",
+      "Developed API security testing framework adopted org-wide",
+      "Cloud security architecture reviews (AWS / GCP)",
+    ],
+  },
+  {
+    role: "Security & DevOps Engineer",
+    company: "Startup Scale",
+    type: "Startup",
+    period: "2020 – 2022",
+    description: "Wore many hats in a fast-moving startup environment — from setting up CI/CD pipelines and server infrastructure to performing internal security audits and shipping full-stack features.",
+    highlights: [
+      "Sole security engineer securing a SaaS product from Day 0",
+      "Set up full DevOps pipeline with integrated SAST/DAST",
+      "Identified and patched 15 critical vulnerabilities pre-launch",
+      "Managed VPS fleet and PostgreSQL cluster administration",
+    ],
+  },
+  {
+    role: "Bug Bounty Hunter",
+    company: "Independent",
+    type: "Freelance",
+    period: "2019 – Present",
+    description: "Active bug bounty researcher across multiple programs. Specializing in web application vulnerabilities, API security issues, and authentication bypasses.",
+    highlights: [
+      "Hall-of-fame entries across multiple major programs",
+      "Focus: SSRF, IDOR, auth bypass, and injection attacks",
+      "Published security research and writeups",
+      "OWASP Top 10 deep expertise",
+    ],
+  },
+];
+---
+
+<section class="experience" id="experience">
+  <div class="container">
+    <div class="section-label">03. Track Record</div>
+    <h2 class="section-title">Experience</h2>
+
+    <div class="timeline">
+      {experiences.map((exp, i) => (
+        <div class="timeline-item" style={`animation-delay: ${i * 0.15}s`}>
+          <div class="timeline-marker">
+            <div class="timeline-dot"></div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div class="timeline-title-group">
+                <h3 class="timeline-role">{exp.role}</h3>
+                <span class="timeline-company">{exp.company}</span>
+              </div>
+              <div class="timeline-meta">
+                <span class="timeline-badge">{exp.type}</span>
+                <span class="timeline-period">{exp.period}</span>
+              </div>
+            </div>
+            <p class="timeline-desc">{exp.description}</p>
+            <ul class="timeline-highlights">
+              {exp.highlights.map(h => (
+                <li class="timeline-highlight">
+                  <span class="highlight-arrow">&rsaquo;</span>
+                  {h}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="certs-row">
+      <div class="section-label" style="margin-bottom: 1.5rem;">Certifications & Training</div>
+      <div class="certs-grid">
+        <div class="cert-item">
+          <span class="cert-dot"></span>
+          <span>B.S. Cybersecurity — Offensive Focus</span>
+        </div>
+        <div class="cert-item">
+          <span class="cert-dot"></span>
+          <span>Multiple Software Development Certifications</span>
+        </div>
+        <div class="cert-item">
+          <span class="cert-dot"></span>
+          <span>Cloud-Focused Security Training</span>
+        </div>
+        <div class="cert-item">
+          <span class="cert-dot"></span>
+          <span>Red Team Operations Training</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .experience {
+    padding: 6rem 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 3rem;
+    letter-spacing: -0.02em;
+  }
+
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 4rem;
+  }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards;
+  }
+
+  .timeline-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0.5rem;
+  }
+
+  .timeline-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--blue-core);
+    box-shadow: 0 0 10px rgba(30, 111, 255, 0.5);
+    flex-shrink: 0;
+    z-index: 1;
+  }
+
+  .timeline-line {
+    width: 1px;
+    flex: 1;
+    background: linear-gradient(to bottom, var(--border-mid), var(--border-dim));
+    margin-top: 4px;
+  }
+
+  .timeline-item:last-child .timeline-line {
+    display: none;
+  }
+
+  .timeline-content {
+    background: var(--bg-card);
+    border: 1px solid var(--border-dim);
+    border-radius: 4px;
+    padding: 1.75rem;
+    margin-bottom: 1.5rem;
+    transition: border-color 0.3s;
+  }
+
+  .timeline-content:hover {
+    border-color: var(--border-mid);
+  }
+
+  .timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .timeline-role {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.2rem;
+  }
+
+  .timeline-company {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--blue-bright);
+    letter-spacing: 0.05em;
+  }
+
+  .timeline-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.4rem;
+  }
+
+  .timeline-badge {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue-core);
+    border: 1px solid var(--border-mid);
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+  }
+
+  .timeline-period {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+  }
+
+  .timeline-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.7;
+  }
+
+  .timeline-highlights {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .timeline-highlight {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+
+  .highlight-arrow {
+    color: var(--blue-core);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .certs-row {
+    border-top: 1px solid var(--border-dim);
+    padding-top: 3rem;
+  }
+
+  .certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+
+  .cert-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    background: var(--bg-card);
+    border: 1px solid var(--border-dim);
+    border-radius: 4px;
+    padding: 0.9rem 1.25rem;
+    transition: border-color 0.2s;
+  }
+
+  .cert-item:hover {
+    border-color: var(--border-mid);
+  }
+
+  .cert-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--blue-core);
+    flex-shrink: 0;
+  }
+</style>

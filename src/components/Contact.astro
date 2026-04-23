@@ -1,0 +1,304 @@
+---
+---
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-label">05. Connect</div>
+
+    <div class="contact-inner">
+      <div class="contact-text">
+        <h2 class="contact-heading">Let's Work Together</h2>
+        <p class="contact-sub">
+          Open to red team engagements, security consulting, freelance development,
+          and interesting full-time opportunities.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:ibrahim@ibrahimgul.dev" class="contact-link">
+            <span class="contact-link-icon">✉</span>
+            <span>ibrahim@ibrahimgul.dev</span>
+          </a>
+          <a href="https://github.com/ibrahimgul" target="_blank" rel="noopener" class="contact-link">
+            <span class="contact-link-icon">⌥</span>
+            <span>github.com/ibrahimgul</span>
+          </a>
+          <a href="https://linkedin.com/in/ibrahimgul" target="_blank" rel="noopener" class="contact-link">
+            <span class="contact-link-icon">◈</span>
+            <span>linkedin.com/in/ibrahimgul</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="card-terminal">
+          <div class="terminal-bar">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+            <span class="terminal-title">contact.sh</span>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-line">
+              <span class="prompt">$</span>
+              <span class="cmd"> cat about.txt</span>
+            </div>
+            <div class="terminal-output">
+              Available for: consulting, red team ops,<br />
+              dev work &amp; security research.
+            </div>
+            <div class="terminal-line mt">
+              <span class="prompt">$</span>
+              <span class="cmd"> echo $RESPONSE_TIME</span>
+            </div>
+            <div class="terminal-output">24–48 hours</div>
+            <div class="terminal-line mt">
+              <span class="prompt">$</span>
+              <span class="cmd"> ./send_message.sh</span>
+            </div>
+            <div class="terminal-output terminal-blink">
+              <span>Awaiting input</span>
+              <span class="cursor-blink">_</span>
+            </div>
+          </div>
+        </div>
+        <a href="mailto:ibrahim@ibrahimgul.dev" class="cta-btn">
+          <span>&gt;</span> Send Message
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-logo">[IG]</span>
+    <span class="footer-copy">Ibrahim Gul © 2024 — Built with Astro.js</span>
+    <span class="footer-hash">
+      <span id="build-hash"></span>
+    </span>
+  </div>
+</footer>
+
+<style>
+  .contact {
+    padding: 6rem 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .contact-heading {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  .contact-sub {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    max-width: 420px;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-dim);
+    border-radius: 4px;
+    background: var(--bg-card);
+    transition: border-color 0.2s, color 0.2s, box-shadow 0.2s;
+  }
+
+  .contact-link:hover {
+    border-color: var(--blue-core);
+    color: var(--blue-bright);
+    box-shadow: 0 0 20px rgba(30, 111, 255, 0.08);
+  }
+
+  .contact-link-icon {
+    font-size: 1rem;
+    color: var(--blue-core);
+    width: 20px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  /* Terminal Card */
+  .contact-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .card-terminal {
+    background: #060d17;
+    border: 1px solid var(--border-mid);
+    border-radius: 6px;
+    overflow: hidden;
+    font-family: var(--font-mono);
+  }
+
+  .terminal-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border-dim);
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  .dot-red { background: #ff5f56; }
+  .dot-yellow { background: #ffbd2e; }
+  .dot-green { background: #27c93f; }
+
+  .terminal-title {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+    margin-left: 0.5rem;
+  }
+
+  .terminal-body {
+    padding: 1.5rem;
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+
+  .terminal-line {
+    display: flex;
+    gap: 0.25rem;
+  }
+
+  .terminal-line.mt {
+    margin-top: 1rem;
+  }
+
+  .prompt {
+    color: var(--blue-core);
+  }
+
+  .cmd {
+    color: var(--text-primary);
+  }
+
+  .terminal-output {
+    color: var(--text-secondary);
+    padding-left: 1rem;
+    margin-top: 0.2rem;
+    font-size: 0.78rem;
+  }
+
+  .terminal-blink {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    color: var(--blue-bright);
+  }
+
+  .cursor-blink {
+    animation: blink 1s step-end infinite;
+  }
+
+  .cta-btn {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    color: var(--bg-primary);
+    background: var(--blue-core);
+    padding: 0.9rem 2rem;
+    text-decoration: none;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: background 0.2s, box-shadow 0.2s;
+  }
+
+  .cta-btn:hover {
+    background: var(--blue-bright);
+    box-shadow: 0 0 30px rgba(30, 111, 255, 0.4);
+  }
+
+  /* Footer */
+  .footer {
+    border-top: 1px solid var(--border-dim);
+    padding: 2rem 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-logo {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--blue-core);
+    letter-spacing: 0.05em;
+  }
+
+  .footer-copy {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+  }
+
+  .footer-hash {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    opacity: 0.5;
+  }
+
+  @media (max-width: 768px) {
+    .contact-inner {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .footer-inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
+
+<script>
+  const hash = Math.random().toString(16).slice(2, 10);
+  const el = document.getElementById('build-hash');
+  if (el) el.textContent = `build::${hash}`;
+</script>

@@ -1,0 +1,249 @@
+---
+const skillGroups = [
+  {
+    label: "Offensive Security",
+    icon: "⚔",
+    skills: [
+      { name: "Red Team Operations", level: 95 },
+      { name: "Penetration Testing", level: 93 },
+      { name: "Bug Bounty Hunting", level: 88 },
+      { name: "Exploit Development", level: 80 },
+    ],
+  },
+  {
+    label: "Development",
+    icon: "⌨",
+    skills: [
+      { name: "Python", level: 92 },
+      { name: "JavaScript / Node.js", level: 88 },
+      { name: "Ruby", level: 78 },
+      { name: "Web Development", level: 85 },
+    ],
+  },
+  {
+    label: "Infrastructure",
+    icon: "🖧",
+    skills: [
+      { name: "Cloud Security (AWS/GCP)", level: 87 },
+      { name: "Server Administration", level: 90 },
+      { name: "DevOps & CI/CD", level: 83 },
+      { name: "SIEM Analysis", level: 86 },
+    ],
+  },
+  {
+    label: "Security & Data",
+    icon: "🔐",
+    skills: [
+      { name: "API Security Testing", level: 91 },
+      { name: "DB Management & Security", level: 84 },
+      { name: "SysAdmin & IT Support", level: 89 },
+      { name: "Security Architecture", level: 82 },
+    ],
+  },
+];
+
+const tags = [
+  "Metasploit", "Burp Suite", "Nmap", "Wireshark", "Kali Linux",
+  "AWS", "Docker", "Git", "PostgreSQL", "MongoDB",
+  "REST APIs", "GraphQL", "Linux", "Bash", "OSINT",
+  "OWASP Top 10", "CVE Research", "Threat Modeling", "SOC Analysis",
+];
+---
+
+<section class="skills" id="skills">
+  <div class="container">
+    <div class="section-label">02. Capabilities</div>
+    <h2 class="section-title">Skills & Expertise</h2>
+
+    <div class="skills-grid">
+      {skillGroups.map((group, i) => (
+        <div class="skill-card" style={`animation-delay: ${i * 0.1}s`}>
+          <div class="skill-card-header">
+            <span class="skill-icon">{group.icon}</span>
+            <h3 class="skill-group-label">{group.label}</h3>
+          </div>
+          <div class="skill-list">
+            {group.skills.map(skill => (
+              <div class="skill-item">
+                <div class="skill-meta">
+                  <span class="skill-name">{skill.name}</span>
+                  <span class="skill-pct">{skill.level}%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-bar-fill" style={`--target: ${skill.level}%`}></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="tags-section">
+      <div class="section-label" style="margin-bottom: 1.5rem;">Tools & Technologies</div>
+      <div class="tags">
+        {tags.map(tag => (
+          <span class="tag">{tag}</span>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .skills {
+    padding: 6rem 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 3rem;
+    letter-spacing: -0.02em;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .skill-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-dim);
+    border-radius: 4px;
+    padding: 1.75rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards;
+  }
+
+  .skill-card:hover {
+    border-color: var(--border-mid);
+    box-shadow: 0 0 30px rgba(30, 111, 255, 0.08);
+  }
+
+  .skill-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-dim);
+  }
+
+  .skill-icon {
+    font-size: 1.2rem;
+  }
+
+  .skill-group-label {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: 0.02em;
+  }
+
+  .skill-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .skill-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .skill-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .skill-name {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+  }
+
+  .skill-pct {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--blue-core);
+    letter-spacing: 0.05em;
+  }
+
+  .skill-bar {
+    height: 2px;
+    background: var(--border-dim);
+    border-radius: 1px;
+    overflow: hidden;
+  }
+
+  .skill-bar-fill {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--blue-core), var(--blue-glow));
+    border-radius: 1px;
+    transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .skill-bar-fill.animated {
+    width: var(--target);
+  }
+
+  .tags-section {
+    border-top: 1px solid var(--border-dim);
+    padding-top: 3rem;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-dim);
+    padding: 0.35rem 0.8rem;
+    border-radius: 2px;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+    cursor: default;
+  }
+
+  .tag:hover {
+    border-color: var(--blue-core);
+    color: var(--blue-bright);
+    background: rgba(30, 111, 255, 0.05);
+  }
+</style>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
+          bar.classList.add('animated');
+        });
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('.skill-card').forEach(card => observer.observe(card));
+</script>

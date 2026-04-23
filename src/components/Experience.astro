@@ -1,47 +1,48 @@
 ---
 const experiences = [
   {
-    role: "Cyber Security Specialist & Lead of IT Support",
-    company: "Worth AI",
-    type: "Security + Operations",
-    period: "2024 – Current",
-    description: "Lead cybersecurity and IT support operations with focus on SOC2 readiness, endpoint security, and practical risk reduction.",
-    impact: "Improved compliance posture by 25%, reduced provisioning time by 80%, and cut downtime by 25%.",
+    role: "Cybersecurity Operations",
+    company: "Cross-Industry Environments",
+    type: "Security + Compliance",
+    period: "Recent Focus",
+    description: "Hands-on security operations across endpoint protection, incident triage, vulnerability management, and policy-driven hardening.",
+    impact: "Outcome-focused work that improved compliance posture, increased reliability, and reduced operational friction.",
+    projects: ["Security Program Delivery", "Monitoring and Hardening"],
     highlights: [
-      "Investigated and resolved 120+ security incidents with a 100% resolution rate",
-      "Conducted vulnerability scans and penetration tests and mitigated 15+ critical issues",
-      "Configured and secured 70+ macOS endpoints with zero asset loss over 12 months",
-      "Managed 20+ technical projects across system deployments, endpoint protection, and remediation",
-      "Provided SME support for Office 365, Google Workspace, AWS, Jira, Datadog, and Slack",
+      "Handled 120+ incident investigations and escalations with strong resolution consistency",
+      "Mitigated critical findings through recurring vulnerability scans and remediation workflows",
+      "Hardened and managed 70+ endpoints with improved asset control and security baselines",
+      "Supported security tooling and operations across cloud and collaboration platforms",
     ],
   },
   {
-    role: "Senior Enterprise Help Desk Technician Tier 2",
-    company: "Apex Systems (Contract for Boeing)",
-    type: "Enterprise",
-    period: "2021 – 2024",
-    description: "Delivered enterprise support and escalation handling for endpoint, identity, and engineering systems in a high-volume environment.",
-    impact: "Resolved 200+ high-priority tickets weekly and improved vulnerability remediation turnaround by 40%.",
+    role: "IT Systems & Endpoint Engineering",
+    company: "Enterprise and Growth Teams",
+    type: "Infrastructure",
+    period: "Core Experience",
+    description: "Built repeatable endpoint provisioning and support workflows with emphasis on automation, identity hygiene, and system uptime.",
+    impact: "Reduced provisioning delays and improved remediation speed through scripting and process refinement.",
+    projects: ["Endpoint Automation", "Infrastructure Reliability"],
     highlights: [
-      "Resolved 200+ high-priority support tickets weekly with consistent 100% resolution accuracy",
-      "Delivered advanced support for Microsoft Office, Active Directory, and enterprise engineering apps",
-      "Implemented PowerShell automation to reduce account provisioning time and misconfigurations",
-      "Configured and managed 300+ accounts per month across Webex, Palo Alto, and mobile integrations",
-      "Collaborated with server teams to accelerate patching and security remediation",
+      "Resolved high-priority support issues across endpoint, identity, and collaboration systems",
+      "Automated account and endpoint tasks with PowerShell and Bash to reduce manual drift",
+      "Managed large-scale account lifecycle operations with better consistency and turnaround",
+      "Partnered with infrastructure teams to accelerate patching and remediation cycles",
     ],
   },
   {
-    role: "Customer Service Team Lead",
-    company: "Publix Super Markets",
-    type: "Leadership",
-    period: "Pre-2021",
-    description: "Led frontline operations and escalations with strong focus on system accuracy, queue flow, and team performance.",
-    impact: "Supervised 80+ associates and maintained 98%+ customer satisfaction across 250+ weekly transactions.",
+    role: "Applied Security Projects",
+    company: "Independent + Collaborative Builds",
+    type: "Product + Research",
+    period: "Ongoing",
+    description: "Translate operational security knowledge into practical tools and full-stack projects that prioritize secure design and measurable outcomes.",
+    impact: "Projects are scoped around real-world workflows: secure access, observability, and defensive automation.",
+    projects: ["Secure Product Engineering", "Defensive Research"],
     highlights: [
-      "Improved cash handling and transaction accuracy through process enforcement",
-      "Managed queue flow and order systems including Western Union and MoneyGram",
-      "Handled high-volume escalations while maintaining service quality and speed",
-      "Coached associates on communication, execution, and operational consistency",
+      "Built full-stack SaaS flows using Django and React with role-based access controls",
+      "Designed Python-based reconnaissance and assessment utilities for security analysis",
+      "Implemented CI/CD, logging, and monitoring patterns to support safer iteration",
+      "Developed IDS and network defense prototypes as part of cybersecurity coursework",
     ],
   },
 ];
@@ -49,8 +50,8 @@ const experiences = [
 
 <section class="experience" id="experience">
   <div class="container">
-    <div class="section-label">03. Track Record</div>
-    <h2 class="section-title">Experience</h2>
+    <div class="section-label">03. Operational Highlights</div>
+    <h2 class="section-title">Operational Highlights</h2>
 
     <div class="timeline">
       {experiences.map((exp, i) => (
@@ -72,6 +73,11 @@ const experiences = [
             </div>
             <p class="timeline-desc">{exp.description}</p>
             <p class="timeline-impact">{exp.impact}</p>
+            <div class="timeline-projects">
+              {exp.projects.map(project => (
+                <a href="#projects" class="timeline-project-chip">{project}</a>
+              ))}
+            </div>
             <ul class="timeline-highlights">
               {exp.highlights.map(h => (
                 <li class="timeline-highlight">
@@ -90,19 +96,31 @@ const experiences = [
       <div class="certs-grid">
         <div class="cert-item">
           <span class="cert-dot"></span>
-          <span>B.A.S. in Cybersecurity, St. Petersburg College (2021-2025)</span>
+          <span>Bachelor of Applied Science in Cybersecurity</span>
         </div>
         <div class="cert-item">
           <span class="cert-dot"></span>
-          <span>Certificate of Cybersecurity (CAE2Y - NSA/DHS)</span>
+          <span>Certificate of Cybersecurity</span>
         </div>
         <div class="cert-item">
           <span class="cert-dot"></span>
-          <span>CompTIA A+ and CompTIA Security+</span>
+          <span>CompTIA A+</span>
         </div>
         <div class="cert-item">
           <span class="cert-dot"></span>
-          <span>Active Civilian Level Security Clearance (2020-2024)</span>
+          <span>CompTIA Security+</span>
+        </div>
+        <div class="cert-item">
+          <span class="cert-dot"></span>
+          <span>AWS Security Certifications</span>
+        </div>
+        <div class="cert-item">
+          <span class="cert-dot"></span>
+          <span>Cisco Networking Certifications</span>
+        </div>
+        <div class="cert-item">
+          <span class="cert-dot"></span>
+          <span>Cisco Network Security Certifications</span>
         </div>
       </div>
     </div>
@@ -244,6 +262,31 @@ const experiences = [
     letter-spacing: 0.04em;
     margin-bottom: 1rem;
     line-height: 1.6;
+  }
+
+  .timeline-projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .timeline-project-chip {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    color: var(--blue-bright);
+    text-decoration: none;
+    background: rgba(30, 111, 255, 0.06);
+    border: 1px solid rgba(30, 111, 255, 0.15);
+    border-radius: 2px;
+    padding: 0.2rem 0.55rem;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .timeline-project-chip:hover {
+    border-color: var(--blue-core);
+    background: rgba(30, 111, 255, 0.12);
   }
 
   .timeline-highlights {
